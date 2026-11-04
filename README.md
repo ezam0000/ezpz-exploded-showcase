@@ -4,6 +4,24 @@ An interactive product hero with original 3D assets, a controlled exploded view,
 
 Free, MIT-licensed source and original Blender assets. The 21st.dev installer edition includes all three examples.
 
+## Install from 21st.dev
+
+```sh
+npx @21st-dev/cli add @ezam0000/ezpz-exploded-showcase
+```
+
+The installer edition in `registry/` is a self-contained component with scoped styles and three example configurations. It imports React and Three.js only. The default demo lets you switch between all three products; the additional demos show the Switch and Emblem separately.
+
+```tsx
+import { ExplodedShowcase, showcaseProducts } from './components/ui/ezpz-exploded-showcase';
+
+export default function Hero() {
+  return <ExplodedShowcase product={showcaseProducts[0]} />;
+}
+```
+
+Adjust the import path to your project's configured component directory. TypeScript projects should install `@types/three` as a development dependency. The example models and posters use public GitHub URLs pinned to the original asset commit. For self-hosting, copy `public/models` and `public/posters` into your app and replace the URLs in `showcaseProducts`. The modular `src/` edition below uses local URLs by default.
+
 ## Open locally
 
 Use Node.js 20.19+ or 22.12+.
