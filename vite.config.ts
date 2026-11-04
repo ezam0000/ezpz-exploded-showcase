@@ -1,0 +1,4 @@
+import { defineConfig } from 'vite';
+import { writeFileSync, mkdirSync } from 'node:fs';
+import { resolve } from 'node:path';
+export default defineConfig({plugins:[{name:'local-preview-export',configureServer(server){server.middlewares.use('/__export',(req,res)=>{const name=(req.url??'').slice(1);if(req.method!=='POST'||!['headphones','switch','emblem','headphones.webm','switch.webm','emblem.webm'].includes(name)){res.statusCode=404;res.end();return;}const chunks:Buffer[]=[];let size=0;req.on('data',chunk=>{size+=chunk.length;if(size>50_000_000){req.destroy();return;}chunks.push(chunk);});req.on('end',()=>{const bytes=Buffer.concat(chunks);if(!name.endsWith('.webm')&&!bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))){res.statusCode=400;res.end();return;}mkdirSync(resolve('previews'),{recursive:true});writeFileSync(resolve('previews',name.endsWith('.webm')?name:`${name}.png`),bytes);res.end('saved');});});}}]});
