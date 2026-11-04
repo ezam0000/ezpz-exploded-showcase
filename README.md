@@ -2,7 +2,7 @@
 
 An interactive product hero with original 3D assets, a controlled exploded view, native typography, finish changes, and geometry-derived soft shadows.
 
-Free, MIT-licensed source and original Blender assets. The 21st.dev installer edition includes all three examples.
+[Published on 21st.dev](https://21st.dev/@ezam0000/components/ezpz-exploded-showcase). Free, MIT-licensed source and original Blender assets. The installer edition includes all three examples.
 
 ## Install from 21st.dev
 

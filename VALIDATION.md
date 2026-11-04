@@ -20,3 +20,7 @@ The production JS is approximately 234 KB gzipped, including React and Three.js.
 Vite's expected warning about retaining the source `use client` directive does not affect the browser build. No component publication or external deployment was performed.
 
 Clean presentation revision: filler paragraphs and finish captions removed; native controls keep accessible names. Desktop, tablet and a fixed 390px mobile frame reviewed. TypeScript/Vite build passes. The native models and their detailed geometry are unchanged.
+
+## Publication checks
+
+The 21st registry edition is self-contained with scoped CSS and a bundled contact-shadow helper. Three examples are included, with original model and poster URLs pinned to an immutable source commit. All six hosted assets returned HTTPS 200, matching local bytes, with CORS enabled. The default gallery was checked in the live CDN bundle. A 672 × 420 embed was visually checked in assembled and exploded states; the compact landscape rule preserves the complete model and functional controls. The original full-size and portrait layouts are unchanged. The registry endpoint returned installable source and declared Three.js dependency.
